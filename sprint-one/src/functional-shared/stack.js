@@ -19,7 +19,12 @@ var stackMethods = {
 
   pop: function() {
     var popped = this.storage[this.index - 1];
-
+    delete this.storage[this.index - 1];
+    if (this.index === 0) {
+      this.index = 0;
+    } else {
+      this.index--;
+    }
 
 
     return popped;
