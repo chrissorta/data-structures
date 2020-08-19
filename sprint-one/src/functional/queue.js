@@ -3,13 +3,13 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var removeIndex = 0;
-  var latestIndex = -1;
+  var latestIndex = 0;
   var storage = {};
 
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    storage[latestIndex + 1] = value;
+    storage[latestIndex] = value;
     latestIndex++;
   };
 

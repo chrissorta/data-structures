@@ -4,7 +4,7 @@ var Queue = function() {
   var someInstance = {};
   someInstance.storage = {};
   someInstance.removeIndex = 0;
-  someInstance.latestIndex = -1;
+  someInstance.latestIndex = 0;
   _.extend(someInstance, queueMethods);
   return someInstance;
 };
@@ -15,7 +15,7 @@ var queueMethods = {
   },
 
   enqueue: function(value) {
-    this.storage[this.latestIndex + 1] = value;
+    this.storage[this.latestIndex] = value;
     this.latestIndex++;
   },
 
