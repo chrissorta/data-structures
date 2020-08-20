@@ -7,7 +7,7 @@ class Stack {
   }
 
   size() {
-    return this.index;
+    return Object.keys(this.storage).length;
   }
 
   push(value) {
@@ -18,9 +18,7 @@ class Stack {
   pop () {
     var popped = this.storage[this.index - 1];
     delete this.storage[this.index - 1];
-    if (this.index === 0) {
-      this.index = 0;
-    } else {
+    if (this.index > 0) {
       this.index--;
     }
     return popped;

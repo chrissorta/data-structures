@@ -17,16 +17,14 @@ var Stack = function() {
   someInstance.pop = function() {
     var popped = storage[index - 1];
     delete storage[index - 1];
-    if (index === 0) {
-      index = 0;
-    } else {
+    if (index > 0) {
       index--;
     }
     return popped;
   };
 
   someInstance.size = function() {
-    return index;
+    return Object.keys(storage).length;
   };
 
   return someInstance;

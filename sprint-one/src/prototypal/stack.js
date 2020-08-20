@@ -18,19 +18,16 @@ var stackMethods = {
   pop: function() {
     var popped = this.storage[this.index - 1];
     delete this.storage[this.index - 1];
-    if (this.index === 0) {
-      this.index = 0;
-    } else {
+    if (this.index > 0) {
       this.index--;
     }
-
 
     return popped;
 
   },
 
   size: function() {
-    return this.index;
+    return Object.keys(this.storage).length;
   }
 
 };
