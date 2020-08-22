@@ -23,9 +23,8 @@ HashTable.prototype.insert = function(k, v) {
   }
 
 
-  if(!wasPushed) {
-    this._storage[index].push([k,v]);
-    console.log('bucket, ', this._storage[index]);
+  if (!wasPushed) {
+    this._storage[index].push([k, v]);
   }
 
 
@@ -37,7 +36,6 @@ HashTable.prototype.retrieve = function(k) {
 
   for (var i = 0; i < this._storage[index].length; i++) {
     var tupple = this._storage[index][i];
-    console.log('bucket value', tupple);
     if (tupple[0] === k) {
 
       return tupple[1];
@@ -49,8 +47,6 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  this.insert(k, undefined);
-
   for (var i = 0; i < this._storage[index].length; i++) {
     var tupple = this._storage[index][i];
 
