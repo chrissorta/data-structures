@@ -47,7 +47,7 @@ describe('tree', function() {
     tree.addChild(5);
     tree.addChild(6);
     tree.addChild(7);
-    tree.forEach(func);
+    tree.traverse(func);
     expect(array).to.eql([5, 5, 6, 7]);
   });
 

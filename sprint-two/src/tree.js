@@ -29,11 +29,11 @@ treeMethods.contains = function(target) {
   return false;
 };
 
-treeMethods.forEach = function(cb) {
+treeMethods.traverse = function(cb) {
   cb(this.value);
 
   for (var i = 0; i < this.children.length; i++) {
-    this.children[i].forEach(cb);
+    this.children[i].traverse(cb);
 
   }
 
