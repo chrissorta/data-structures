@@ -4,9 +4,7 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
-    //  create a node
-    //  list.head = node
-    //  list.tail = node
+
     var newNode = Node(value);
     if (list.head === null) {
       list.head = newNode;
@@ -15,13 +13,6 @@ var LinkedList = function() {
       list.tail.next = newNode;
       list.tail = newNode;
     }
-
-
-    //else
-    //  create a node
-    //     node.next = null
-    //  node.next of the current tail -> new node
-    //  list.tail -> new node
 
   };
 
@@ -47,10 +38,6 @@ var LinkedList = function() {
       currentNode = currentNode.next;
     }
     return isContained;
-    //  if target === list.value
-    //  change next pointer to next node
-    //     change boolean to true
-    // return boolean variable
   };
 
   return list;

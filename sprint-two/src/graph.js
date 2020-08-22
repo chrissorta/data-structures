@@ -43,10 +43,13 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
   //repeat in second node
   var index;
   index = this.storage[fromNode].indexOf(toNode);
-  this.storage[fromNode].splice(index, 1);
-
+  if (index !== -1) {
+    this.storage[fromNode].splice(index, 1);
+  }
   index = this.storage[toNode].indexOf(fromNode);
-  this.storage[toNode].splice(index, 1);
+  if (index !== -1) {
+    this.storage[toNode].splice(index, 1);
+  }
 };
 
 // Pass in a callback which will be executed on each node of the graph.

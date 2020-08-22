@@ -24,4 +24,10 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should not contain duplicate values', function() {
+    set.add('Susan Sarandon');
+    set.add('Danny Glover');
+    set.add('Danny Glover');
+    expect(Object.keys(set._storage)).to.have.lengthOf(2);
+  });
 });
